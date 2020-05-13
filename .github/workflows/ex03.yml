@@ -1,0 +1,34 @@
+# This is a basic workflow to help you get started with Actions
+
+name: exo3
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  watch:
+    types: [started]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  alpine:
+    runs-on: unbuntu-latest
+    container: alpine
+    steps:
+      - name: Alpine vers
+        run: os-release
+  
+  archlinux:
+    runs-on: ubuntu-latest
+    container: archlinux
+    steps:
+      - name: Archlinux vers
+        run: os-release
+        
+        
+  fedora:
+    runs-on: ubuntu-latest
+    container: fedora
+    steps:
+      - name: Fedora vers
+        run: os-release
