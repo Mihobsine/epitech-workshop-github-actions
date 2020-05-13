@@ -1,12 +1,29 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: exo01
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on :
   watch :
     types : [ started ] # Star event ( no there 's no mistake , yes it 's strange .)
+  issues:
+    types:
+      - opened
+      - edited
+      - closed
+  pull_request:
+    types: 
+      - ready_for_review
+  gollum:
+    types:
+      - opened
+      - edited
+      - closed
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '0 0 1 1-12 *'
+  
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
