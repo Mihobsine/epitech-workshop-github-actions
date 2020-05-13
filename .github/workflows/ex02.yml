@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: Display version
         run: |
-          lsb_realese -rs
+          lsb_release -rs
             
   windows:
     runs-on: windows-latest
