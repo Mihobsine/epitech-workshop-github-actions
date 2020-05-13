@@ -20,6 +20,6 @@ jobs:
 
     - name: Get current date
       id: date
-      run: echo "Hello World! Today is $(date +'%Y-%m-%d')"
+      run: echo "Hello World! Today is $(date +'%m-%d-%y %H:%M:%S')"
 
 
