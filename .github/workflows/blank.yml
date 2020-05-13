@@ -1,0 +1,36 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  watch:
+    types: [started]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  jobs:
+    macos:
+      runs-on: macos-latest
+      
+      steps:
+        - name: Display version
+          run: |
+            sw_vers -productVersion
+    ubuntu:
+      runs-on: ubuntu-latest
+      
+      steps:
+        - name: Display version
+          run: |
+            lsb_realese -rs
+            
+    windows:
+      runs-on: windows-latest
+      
+      steps:
+        -name: Display version
+        run: |
+          (Get-ComputerInfo).OsHardwareAbstractionLayer
