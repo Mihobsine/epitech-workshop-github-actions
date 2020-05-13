@@ -11,26 +11,25 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  jobs:
-    macos:
-      runs-on: macos-latest
+  macos:
+    runs-on: macos-latest
       
-      steps:
-        - name: Display version
-          run: |
-            sw_vers -productVersion
-    ubuntu:
-      runs-on: ubuntu-latest
+    steps:
+      - name: Display version
+        run: |
+          sw_vers -productVersion
+  ubuntu:
+    runs-on: ubuntu-latest
       
-      steps:
-        - name: Display version
-          run: |
-            lsb_realese -rs
+    steps:
+      - name: Display version
+        run: |
+          lsb_realese -rs
             
-    windows:
-      runs-on: windows-latest
+  windows:
+    runs-on: windows-latest
       
-      steps:
-        -name: Display version
+    steps:
+      - name: Display version
         run: |
           (Get-ComputerInfo).OsHardwareAbstractionLayer
